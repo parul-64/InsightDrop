@@ -15,7 +15,7 @@ function FeedbackForm() {
     try {
       setLoading(true);
 
-      await axios.post("http://localhost:5000/api/feedback", {
+      await axios.post("https://insightdrop.onrender.com/api/feedback", {
         projectKey,
         name,
         email,

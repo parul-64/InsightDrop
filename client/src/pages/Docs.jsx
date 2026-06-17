@@ -11,7 +11,7 @@ function Docs() {
 
       <div className="card">
         <pre>
-{`<form action="http://localhost:5000/api/feedback" method="POST">
+{`<form action="https://insightdrop.onrender.com/api/feedback" method="POST">
 
   <input type="hidden" name="projectKey" value="INS_your_project_key" />
 

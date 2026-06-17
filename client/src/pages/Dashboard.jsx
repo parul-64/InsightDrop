@@ -104,7 +104,8 @@ const overviewText =
 
   const fetchProjects = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/projects", {
+      const res = await axios.get("https://insightdrop.onrender.com/api/projects", 
+      {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -128,7 +129,7 @@ const overviewText =
       setCreatingProject(true);
 
       await axios.post(
-        "http://localhost:5000/api/projects",
+        "https://insightdrop.onrender.com/api/projects",
         { name: projectName },
         { headers: { Authorization: `Bearer ${token}` } }
       );
@@ -159,7 +160,7 @@ const overviewText =
       setOpenProjectId(project._id);
 
       const res = await axios.get(
-        `http://localhost:5000/api/feedback/${project._id}`,
+        `https://insightdrop.onrender.com/api/feedback/${project._id}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
@@ -175,7 +176,7 @@ const overviewText =
     setLoadingSummary(true);
 
     const res = await axios.post(
-      "http://localhost:5000/api/ai/summary",
+      "https://insightdrop.onrender.com/api/ai/summary",
       { feedbacks },
       {
         headers: {
@@ -208,7 +209,7 @@ const overviewText =
 
   const deleteFeedback = async (feedbackId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/feedback/${feedbackId}`, {
+      await axios.delete(`https://insightdrop.onrender.com/api/feedback/${feedbackId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
@@ -222,7 +223,7 @@ const overviewText =
 
   const deleteProject = async (projectId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/projects/${projectId}`, {
+      await axios.delete(`https://insightdrop.onrender.com/api/projects/${projectId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
